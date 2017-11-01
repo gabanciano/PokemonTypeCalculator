@@ -17,7 +17,7 @@ public class PokeCalcu extends JFrame implements ActionListener
 	JButton calc = new JButton("Calculate");
 	JButton about = new JButton("?");
 	
-	public PokeCalcu()
+	private void InitUI()
 	{
 		Container x = getContentPane();
 		x.setLayout(new FlowLayout());
@@ -42,8 +42,7 @@ public class PokeCalcu extends JFrame implements ActionListener
 		{
 			resultp.add(result);
 		}
-
-				
+		
 		ButtonGroup group = new ButtonGroup();
 		group.add(choose);
 		group.add(choose2);
@@ -72,6 +71,12 @@ public class PokeCalcu extends JFrame implements ActionListener
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
+	
+	public PokeCalcu()
+	{
+		InitUI();
+	}
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		if(e.getSource() == about)
@@ -1591,30 +1596,30 @@ public class PokeCalcu extends JFrame implements ActionListener
 	}
 	public String NE()
 	{
-		String ne = "No effect (0%)";
+		String statusEffect = "No effect (0%)";
 		result.setBackground(new Color(96,96,96));
 		result.setForeground(Color.white);
-		return ne;
+		return statusEffect;
 	}
 	public String NVE()
 	{
-		String nve = "Not very effective (50%)";
+		String statusEffect = "Not very effective (50%)";
 		result.setBackground(Color.red);
 		result.setForeground(Color.white);
-		return nve;
+		return statusEffect;
 	}
 	public String N()
 	{
-		String n = "Normal (100%)";
+		String statusEffect = "Normal (100%)";
 		result.setBackground(Color.white);
 		result.setForeground(Color.black);
-		return n;
+		return statusEffect;
 	}
 	public String SE()
 	{
-		String se = "Super-effective (200%)";
+		String statusEffect = "Super-effective (200%)";
 		result.setBackground(new Color(0,153,0));
 		result.setForeground(Color.white);
-		return se;
+		return statusEffect;
 	}
 }
